@@ -1,0 +1,24 @@
+#对外端口
+server:
+  port: 8022
+
+spring:
+  #微服务配置
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  application:
+    name: service-sample-base-api-consumer
+  # 数据库配置
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3300/framework_sample_starter?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: 123456
+
+#mybatis-plus默认配置
+mybatis-plus:
+  mapper-locations: classpath*:mapper/**/*.xml
+  #类别名，支持通配符 * 或者 ; 分割
+  typeAliasesPackage: com.weng.**.mapper
